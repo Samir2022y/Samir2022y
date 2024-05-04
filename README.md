@@ -1,7 +1,7 @@
 [![MasterHead](https://1.bp.blogspot.com/-7A4WynwLsM...)](https://rishavchanda.io)
 <h1 align="center">Hi 👋, I'm Guenchi Samir</h1>
 <h3 align="center">A passionate frontend developer and linux Administrator and Data scientist from Algeria</h3>
-<img align="right" width="400" src="https://playground.com/post/clvs52o4v02h5s6017d9lfkhr" alt="coding">
+<img align="right" width="400" src="https://www.google.com/imgres?q=animated%20coding%20gif%20for%20github&imgurl=https%3A%2F%2Fuser-images.githubusercontent.com%2F74038190%2F219923823-bf1ce878-c6b8-4faa-be07-93e6b1006521.gif&imgrefurl=https%3A%2F%2Fgithub.com%2FAnmol-Baranwal%2FCool-GIFs-For-GitHub&docid=hqmA8T4OFW0sOM&tbnid=8slf02g053EjXM&vet=12ahUKEwjWzYz-jvSFAxUraqQEHUEmBOEQM3oECFwQAA..i&w=1007&h=595&hcb=2&ved=2ahUKEwjWzYz-jvSFAxUraqQEHUEmBOEQM3oECFwQAA" alt="coding">
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=samir2022y&label=Profile%20views&color=0e75b6&style=flat" alt="samir2022y" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=samir2022y" alt="samir2022y" /></a> </p>
