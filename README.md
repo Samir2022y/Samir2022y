@@ -1,20 +1,17 @@
-<div align="center">
-  
-  ![Samir Guenchi](https://readme-typing-svg.demolab.com/?lines=Welcome+to+Samir's+World!;Aspiring+AI+Researcher+and+Mathematician;Quantum+Physics+Enthusiast;Competitive+Programmer;Always+Learning,+Always+Evolving!&center=true&width=1000&height=80&font=Fira%20Code&color=64FFDA)
+# 🚀 Samir Guenchi's GitHub Profile
 
-  ## 🚀 **Samir Guenchi**
-  🎓 **Student** at the National Higher School of Artificial Intelligence  
-  🔬 Exploring the intersection of **AI**, **Mathematics**, and **Quantum Physics**  
-  💻 Passionate about **Competitive Programming** and **Problem Solving**  
-  🌍 Aspiring to achieve national-level recognition in **programming contests**  
-  🧠 Constantly improving and targeting **+1000 problems solved** in the near future
+![Quantum AI Header](quantum-ai-header.svg)
 
-</div>
+## 🚀 **Samir Guenchi**
+🎓 **Student** at the National Higher School of Artificial Intelligence  
+🔬 Exploring the intersection of **AI**, **Mathematics**, and **Quantum Physics**  
+💻 Passionate about **Competitive Programming** and **Problem Solving**  
+🌍 Aspiring to achieve national-level recognition in **programming contests**  
+🧠 Constantly improving and targeting **+1000 problems solved** in the near future
 
 ---
 
 ## 🧩 **My Skill Set**
-
 <table align="center">
   <tr>
     <td align="center" width="96">
@@ -47,7 +44,6 @@
 ---
 
 ## 📊 **GitHub Stats**
-
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=samir2022y&theme=radical&show_icons=true" alt="Samir's GitHub Stats" />
   <br>
@@ -57,7 +53,6 @@
 ---
 
 ## ✨ **Featured Projects**
-
 - 🔭 **[Algiverse](https://github.com/samir2022y/algiverse):** A platform revolutionizing e-commerce with **AI-driven solutions** and a focus on **digital commerce in Algeria**.
 - 🌱 **[RecycleIt](https://github.com/samir2022y/recycleit):** An eco-friendly project using **IoT** to manage **smart plant watering systems**.
 - 🧠 **[Heuristic Path Finder](https://github.com/samir2022y/heuristic-pathfinder):** Optimizing delivery routes in **Algeria** using **AI and heuristic algorithms**.
@@ -73,7 +68,6 @@
 ---
 
 ## 📫 **Connect With Me**
-
 <div align="center">
   <a href="mailto:samir.guenchi@ensia.edu.dz" target="_blank">
     <img src="https://img.shields.io/badge/-Email-red?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
@@ -85,3 +79,8 @@
     <img src="https://img.shields.io/badge/-GitHub-black?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
 </div>
+
+---
+
+## **Profile Views**
+![Profile Views](https://komarev.com/ghpvc/?username=samir2022y&color=blueviolet)
