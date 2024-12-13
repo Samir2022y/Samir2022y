@@ -2,17 +2,29 @@
   <defs>
     <!-- 3D Gradient Effect -->
     <linearGradient id="3dGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0062cc" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#00b0ff" stop-opacity="1"/>
+      <stop offset="0%" stop-color="#FF6F00" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00B0FF" stop-opacity="1"/>
     </linearGradient>
 
     <!-- Glow Effect for 3D Name -->
     <filter id="glow3DEffect">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
+    </filter>
+
+    <!-- Lightning Effect for Tesla -->
+    <filter id="lightningEffect">
+      <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Particle Effect for Dynamic Movement -->
+    <filter id="particleEffect">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="3" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
 
     <!-- Shadow for 3D Effect -->
@@ -26,7 +38,7 @@
   <rect width="1200" height="300" fill="url(#3dGradient)"/>
 
   <!-- Atom Visualization: Simplified to Circles -->
-  <g opacity="0.8" transform="translate(100, 50)">
+  <g opacity="0.9" transform="translate(100, 50)">
     <!-- Inner Electron Orbit -->
     <circle cx="50" cy="50" r="20" fill="none" stroke="#00FFFF" stroke-width="2" filter="url(#shadowEffect)"/>
 
@@ -46,7 +58,7 @@
     </circle>
   </g>
 
-  <!-- Title with 3D Effect and Glow -->
+  <!-- Title with 3D Effect and Glow (GUENCHI) -->
   <text x="50%" y="150" 
         text-anchor="middle" 
         font-family="Arial, sans-serif" 
@@ -72,7 +84,26 @@
     </tspan>
   </text>
 
-  <!-- Adding Particle Movement Effect -->
+  <!-- Lightning Animation for Tesla Inspiration -->
+  <g opacity="0.6" filter="url(#lightningEffect)">
+    <line x1="50" y1="100" x2="250" y2="150" stroke="#FF6347" stroke-width="2">
+      <animate attributeName="x2" from="250" to="450" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="y2" from="150" to="50" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="300" y1="200" x2="500" y2="180" stroke="#FF6347" stroke-width="2">
+      <animate attributeName="x2" from="500" to="700" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="y2" from="180" to="250" dur="1s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Einstein Inspired Spiral -->
+  <g opacity="0.6" fill="none" stroke="#F39C12" stroke-width="2">
+    <path d="M400,100 Q450,50 500,100 T600,150 T700,100" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="-50" dur="4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Particle Movement for Dynamic Energy -->
   <g>
     <circle cx="300" cy="150" r="8" fill="#FF6347">
       <animate attributeName="cx" values="300;400;300" dur="4s" repeatCount="indefinite"/>
