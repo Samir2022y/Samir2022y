@@ -1,97 +1,133 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" style="background-color: #0a192f;">
-  <!-- Gradient and Symbol Definitions -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
   <defs>
-    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a192f;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#112240;stop-opacity:1"/>
+    <!-- Unique Gradient -->
+    <linearGradient id="innovativeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C1C2E" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#2C3E50" stop-opacity="1"/>
     </linearGradient>
 
-    <!-- Integral Symbol -->
-    <symbol id="integralSymbol" viewBox="0 0 100 100">
-      <path d="M30 20 Q50 40, 70 20 Q90 0, 70 -20 M50 50 L50 150 M30 180 Q50 160, 70 180 Q90 200, 70 220" 
-            fill="none" stroke="#00ffff" stroke-width="5" opacity="0.7"/>
+    <!-- Atom Symbol with Electron Orbits -->
+    <symbol id="dynamicAtom" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="20" fill="none" stroke="#00FFFF" stroke-width="2"/>
+      <circle cx="50" cy="50" r="30" fill="none" stroke="#7B68EE" stroke-width="2" stroke-dasharray="5,5">
+        <animateTransform 
+          attributeName="transform" 
+          type="rotate" 
+          from="0 50 50" 
+          to="360 50 50" 
+          dur="8s" 
+          repeatCount="indefinite"/>
+      </circle>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="3,7">
+        <animateTransform 
+          attributeName="transform" 
+          type="rotate" 
+          from="360 50 50" 
+          to="0 50 50" 
+          dur="10s" 
+          repeatCount="indefinite"/>
+      </circle>
+      <circle cx="50" cy="50" r="5" fill="#00FFFF">
+        <animateMotion 
+          path="M50,30 Q30,50 50,70 Q70,50 50,30Z" 
+          dur="6s" 
+          repeatCount="indefinite"/>
+      </circle>
     </symbol>
 
-    <!-- Quantum Computing Symbol (Qubit) -->
-    <symbol id="quantumSymbol" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#7b68ee" stroke-width="4"/>
-      <circle cx="50" cy="50" r="20" fill="#7b68ee" opacity="0.5"/>
-      <path d="M20 20 L80 80 M80 20 L20 80" stroke="#00ffff" stroke-width="3" opacity="0.6"/>
-    </symbol>
+    <!-- Data Flow Filter -->
+    <filter id="dataFlowEffect">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
 
-    <!-- Atom Symbol -->
-    <symbol id="atomSymbol" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#ff6347" stroke-width="3"/>
-      <path d="M30 50 Q50 10, 70 50 Q50 90, 30 50" fill="none" stroke="#ff6347" stroke-width="3"/>
-      <path d="M50 30 Q70 50, 50 70 Q30 50, 50 30" fill="none" stroke="#ff6347" stroke-width="3"/>
-    </symbol>
-
-    <!-- Animated Quantum Particles -->
-    <linearGradient id="particleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00bfff;stop-opacity:0.8"/>
-      <stop offset="100%" style="stop-color:#7b68ee;stop-opacity:0.6"/>
-    </linearGradient>
+    <!-- Glowing Text Effect -->
+    <filter id="glowEffect">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="300" fill="url(#backgroundGradient)"/>
+  <rect width="1200" height="300" fill="url(#innovativeGradient)"/>
 
-  <!-- Quantum Particle Animations -->
-  <g opacity="0.7">
-    <circle r="10" fill="url(#particleGradient)">
-      <animateMotion 
-        dur="6s" 
-        repeatCount="indefinite"
-        rotate="auto"
-        path="M-50,150 Q600,50 1250,150"/>
-    </circle>
-    <circle r="7" fill="url(#particleGradient)">
-      <animateMotion 
-        dur="5s" 
-        begin="2s"
-        repeatCount="indefinite"
-        rotate="auto"
-        path="M-50,150 Q600,100 1250,150"/>
-    </circle>
+  <!-- Molecular Network Background -->
+  <g opacity="0.2" stroke="#00FFFF" stroke-width="1">
+    <path d="M0,50 Q200,20 400,50 T800,100 T1200,50" fill="none" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" 
+               from="0" 
+               to="-20" 
+               dur="5s" 
+               repeatCount="indefinite"/>
+    </path>
+    <path d="M0,250 Q200,220 400,250 T800,200 T1200,250" fill="none" stroke-dasharray="3,7">
+      <animate attributeName="stroke-dashoffset" 
+               from="0" 
+               to="20" 
+               dur="7s" 
+               repeatCount="indefinite"/>
+    </path>
   </g>
 
-  <!-- Symbolic Elements -->
+  <!-- Atom Visualizations -->
   <g transform="translate(100, 50)">
-    <use href="#integralSymbol" width="80" height="80" opacity="0.8"/>
+    <use href="#dynamicAtom" width="150" height="150" opacity="0.7"/>
   </g>
-  <g transform="translate(300, 50)">
-    <use href="#quantumSymbol" width="80" height="80" opacity="0.8"/>
-  </g>
-  <g transform="translate(500, 50)">
-    <use href="#atomSymbol" width="80" height="80" opacity="0.8"/>
+  <g transform="translate(1000, 200)">
+    <use href="#dynamicAtom" width="100" height="100" opacity="0.5"/>
   </g>
 
-  <!-- Qubit Circuits -->
-  <g transform="translate(700, 50)">
-    <circle cx="50" cy="50" r="40" fill="none" stroke="#00ffff" stroke-width="4"/>
-    <path d="M30 50 L70 50" stroke="#7b68ee" stroke-width="4"/>
-    <path d="M50 30 L50 70" stroke="#7b68ee" stroke-width="4"/>
-  </g>
-
-  <!-- Text Overlay -->
-  <text x="50%" y="220" 
+  <!-- Innovative Name Display with Glow Effect -->
+  <text x="50%" y="150" 
         text-anchor="middle" 
         font-family="monospace" 
-        font-size="36" 
-        font-weight="bold" 
-        fill="white">
-    <tspan x="50%" dy="-100" font-size="48" fill="#00ffff">Guenchi Samir</tspan>
-    <tspan x="50%" dy="50" font-size="24" fill="rgba(255,255,255,0.8)">
-      Quantum Computing | AI Research | Competitive Programming
-    </tspan>
-    <tspan x="50%" dy="40" font-size="18" fill="rgba(255,255,255,0.6)">
-      Exploring the Intersection of Mathematics, Technology, and Innovation
+        font-size="120" 
+        font-weight="bold"
+        filter="url(#glowEffect)">
+    <tspan fill="#00FFFF">
+      GUENCHI
+      <animate 
+        attributeName="fill-opacity" 
+        values="0.7;1;0.7" 
+        dur="5s" 
+        repeatCount="indefinite"/>
     </tspan>
   </text>
 
-  <!-- Quantum Circuit-like Lines -->
+  <!-- Professional Subtitle with Animated Letter Spacing -->
+  <text x="50%" y="250" 
+        text-anchor="middle" 
+        font-family="monospace" 
+        font-size="24" 
+        fill="rgba(255,255,255,0.7)">
+    <tspan>
+      QUANTUM COMPUTING | AI RESEARCH | COMPETITIVE PROGRAMMING
+      <animate 
+        attributeName="letter-spacing" 
+        values="0px;3px;0px" 
+        dur="4s" 
+        repeatCount="indefinite"/>
+    </tspan>
+  </text>
+
+  <!-- Quantum Circuit Lines with Pulse Effect -->
   <g stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none">
-    <path d="M0,100 L400,50 L800,200 L1200,150" stroke-dasharray="10,10"/>
-    <path d="M0,200 L400,250 L800,100 L1200,180" stroke-dasharray="15,15"/>
+    <path d="M0,100 L400,50 L800,200 L1200,150" stroke-dasharray="10,10">
+      <animate attributeName="stroke-dashoffset" 
+               from="0" 
+               to="-50" 
+               dur="4s" 
+               repeatCount="indefinite"/>
+    </path>
+    <path d="M0,200 L400,250 L800,100 L1200,180" stroke-dasharray="15,15">
+      <animate attributeName="stroke-dashoffset" 
+               from="0" 
+               to="50" 
+               dur="6s" 
+               repeatCount="indefinite"/>
+    </path>
   </g>
 </svg>
