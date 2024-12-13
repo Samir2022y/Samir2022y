@@ -15,12 +15,6 @@
       </feMerge>
     </filter>
 
-    <!-- Particle Effects -->
-    <filter id="particleEffect">
-      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="turbulence"/>
-      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="3" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-
     <!-- Shadow for 3D Effect -->
     <filter id="shadowEffect">
       <feDropShadow dx="5" dy="5" stdDeviation="10" flood-color="#000000" />
@@ -31,29 +25,22 @@
   <!-- Background with Gradient -->
   <rect width="1200" height="300" fill="url(#3dGradient)"/>
 
-  <!-- Mathematical Symbols Background with Depth -->
-  <g opacity="0.2" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif" font-size="40">
-    <text x="100" y="50">∫ f(x) dx</text>
-    <text x="300" y="80">Σ (x² + y²)</text>
-    <text x="500" y="120">∑ a_n = b</text>
-    <text x="700" y="200">E = mc²</text>
-    <text x="900" y="240">∇⋅E = ρ/ε₀</text>
-
-    <!-- Additional Mathematical Symbols -->
-    <text x="200" y="250">∞</text>
-    <text x="600" y="50">Δx</text>
-    <text x="1000" y="120">∂/∂x</text>
-  </g>
-
-  <!-- Molecule Circles with 3D Shadow and Rotation -->
-  <g opacity="0.6" transform="translate(100, 50)">
+  <!-- Atom Visualization: Simplified to Circles -->
+  <g opacity="0.8" transform="translate(100, 50)">
+    <!-- Inner Electron Orbit -->
     <circle cx="50" cy="50" r="20" fill="none" stroke="#00FFFF" stroke-width="2" filter="url(#shadowEffect)"/>
-    <circle cx="50" cy="50" r="30" fill="none" stroke="#7B68EE" stroke-width="2" stroke-dasharray="5,5" filter="url(#shadowEffect)">
+
+    <!-- Outer Electron Orbit 1 -->
+    <circle cx="50" cy="50" r="40" fill="none" stroke="#7B68EE" stroke-width="2" stroke-dasharray="5,5" filter="url(#shadowEffect)">
       <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="8s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="50" cy="50" r="40" fill="none" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="3,7" filter="url(#shadowEffect)">
+
+    <!-- Outer Electron Orbit 2 -->
+    <circle cx="50" cy="50" r="60" fill="none" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="3,7" filter="url(#shadowEffect)">
       <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="10s" repeatCount="indefinite"/>
     </circle>
+
+    <!-- Electron -->
     <circle cx="50" cy="50" r="5" fill="#00FFFF">
       <animateMotion path="M50,30 Q30,50 50,70 Q70,50 50,30Z" dur="6s" repeatCount="indefinite"/>
     </circle>
@@ -85,18 +72,8 @@
     </tspan>
   </text>
 
-  <!-- Quantum Circuit with 3D Lines and Dynamic Pulse -->
-  <g stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none">
-    <path d="M0,100 L400,50 L800,200 L1200,150" stroke-dasharray="10,15">
-      <animate attributeName="stroke-dashoffset" from="0" to="-30" dur="6s" repeatCount="indefinite"/>
-    </path>
-    <path d="M0,200 L400,250 L800,100 L1200,180" stroke-dasharray="10,20">
-      <animate attributeName="stroke-dashoffset" from="0" to="30" dur="8s" repeatCount="indefinite"/>
-    </path>
-  </g>
-
   <!-- Adding Particle Movement Effect -->
-  <g filter="url(#particleEffect)">
+  <g>
     <circle cx="300" cy="150" r="8" fill="#FF6347">
       <animate attributeName="cx" values="300;400;300" dur="4s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="150;200;150" dur="4s" repeatCount="indefinite"/>
