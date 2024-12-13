@@ -1,133 +1,146 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
   <defs>
-    <!-- Unique Gradient -->
-    <linearGradient id="innovativeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1C1C2E" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#2C3E50" stop-opacity="1"/>
+    <!-- Enhanced Gradient -->
+    <linearGradient id="enhancedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#282C34" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#8E44AD" stop-opacity="1"/>
     </linearGradient>
 
-    <!-- Atom Symbol with Electron Orbits -->
+    <!-- Dynamic Atom with Multiple Orbits -->
     <symbol id="dynamicAtom" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="20" fill="none" stroke="#00FFFF" stroke-width="2"/>
-      <circle cx="50" cy="50" r="30" fill="none" stroke="#7B68EE" stroke-width="2" stroke-dasharray="5,5">
+      <circle cx="50" cy="50" r="20" fill="none" stroke="#00FF00" stroke-width="3"/>
+      <circle cx="50" cy="50" r="30" fill="none" stroke="#F39C12" stroke-width="2" stroke-dasharray="5,5">
         <animateTransform 
           attributeName="transform" 
           type="rotate" 
           from="0 50 50" 
           to="360 50 50" 
-          dur="8s" 
+          dur="6s" 
           repeatCount="indefinite"/>
       </circle>
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="3,7">
+      <circle cx="50" cy="50" r="45" fill="none" stroke="#3498DB" stroke-width="1" stroke-dasharray="5,10">
         <animateTransform 
           attributeName="transform" 
           type="rotate" 
-          from="360 50 50" 
-          to="0 50 50" 
-          dur="10s" 
+          from="0 50 50" 
+          to="360 50 50" 
+          dur="9s" 
           repeatCount="indefinite"/>
       </circle>
-      <circle cx="50" cy="50" r="5" fill="#00FFFF">
+      <circle cx="50" cy="50" r="5" fill="#FF6347">
         <animateMotion 
-          path="M50,30 Q30,50 50,70 Q70,50 50,30Z" 
-          dur="6s" 
+          path="M50,25 Q30,45 50,65 Q70,45 50,25Z" 
+          dur="4s" 
           repeatCount="indefinite"/>
       </circle>
     </symbol>
 
-    <!-- Data Flow Filter -->
-    <filter id="dataFlowEffect">
-      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="turbulence"/>
-      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="5" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-
-    <!-- Glowing Text Effect -->
+    <!-- Enhanced Glowing Effect -->
     <filter id="glowEffect">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <!-- Particle Effects -->
+    <filter id="particleEffect">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="300" fill="url(#innovativeGradient)"/>
+  <!-- Background with Gradient -->
+  <rect width="1200" height="300" fill="url(#enhancedGradient)"/>
 
-  <!-- Molecular Network Background -->
-  <g opacity="0.2" stroke="#00FFFF" stroke-width="1">
+  <!-- Molecular Network with Pulsating Lines -->
+  <g opacity="0.1" stroke="#A2D9CE" stroke-width="2">
     <path d="M0,50 Q200,20 400,50 T800,100 T1200,50" fill="none" stroke-dasharray="5,5">
       <animate attributeName="stroke-dashoffset" 
                from="0" 
-               to="-20" 
-               dur="5s" 
+               to="-10" 
+               dur="3s" 
                repeatCount="indefinite"/>
     </path>
-    <path d="M0,250 Q200,220 400,250 T800,200 T1200,250" fill="none" stroke-dasharray="3,7">
+    <path d="M0,250 Q200,220 400,250 T800,200 T1200,250" fill="none" stroke-dasharray="5,10">
       <animate attributeName="stroke-dashoffset" 
                from="0" 
-               to="20" 
-               dur="7s" 
+               to="10" 
+               dur="4s" 
                repeatCount="indefinite"/>
     </path>
   </g>
 
   <!-- Atom Visualizations -->
   <g transform="translate(100, 50)">
-    <use href="#dynamicAtom" width="150" height="150" opacity="0.7"/>
+    <use href="#dynamicAtom" width="150" height="150" opacity="0.6"/>
   </g>
   <g transform="translate(1000, 200)">
-    <use href="#dynamicAtom" width="100" height="100" opacity="0.5"/>
+    <use href="#dynamicAtom" width="100" height="100" opacity="0.4"/>
   </g>
 
-  <!-- Innovative Name Display with Glow Effect -->
+  <!-- Title with Glowing Effect and Pulsating Animation -->
   <text x="50%" y="150" 
         text-anchor="middle" 
-        font-family="monospace" 
-        font-size="120" 
+        font-family="Arial, sans-serif" 
+        font-size="100" 
         font-weight="bold"
         filter="url(#glowEffect)">
-    <tspan fill="#00FFFF">
+    <tspan fill="#00FF00">
       GUENCHI
       <animate 
         attributeName="fill-opacity" 
         values="0.7;1;0.7" 
+        dur="3s" 
+        repeatCount="indefinite"/>
+    </tspan>
+  </text>
+
+  <!-- Subtitle with Animated Letter Spacing -->
+  <text x="50%" y="250" 
+        text-anchor="middle" 
+        font-family="monospace" 
+        font-size="28" 
+        fill="rgba(255,255,255,0.8)">
+    <tspan>
+      QUANTUM COMPUTING | AI RESEARCH | PROGRAMMING INNOVATION
+      <animate 
+        attributeName="letter-spacing" 
+        values="0px;5px;0px" 
         dur="5s" 
         repeatCount="indefinite"/>
     </tspan>
   </text>
 
-  <!-- Professional Subtitle with Animated Letter Spacing -->
-  <text x="50%" y="250" 
-        text-anchor="middle" 
-        font-family="monospace" 
-        font-size="24" 
-        fill="rgba(255,255,255,0.7)">
-    <tspan>
-      QUANTUM COMPUTING | AI RESEARCH | COMPETITIVE PROGRAMMING
-      <animate 
-        attributeName="letter-spacing" 
-        values="0px;3px;0px" 
-        dur="4s" 
-        repeatCount="indefinite"/>
-    </tspan>
-  </text>
-
-  <!-- Quantum Circuit Lines with Pulse Effect -->
-  <g stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none">
-    <path d="M0,100 L400,50 L800,200 L1200,150" stroke-dasharray="10,10">
+  <!-- Quantum Circuit with Dynamic Pulse Effect -->
+  <g stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none">
+    <path d="M0,100 L400,50 L800,200 L1200,150" stroke-dasharray="10,15">
       <animate attributeName="stroke-dashoffset" 
                from="0" 
-               to="-50" 
-               dur="4s" 
-               repeatCount="indefinite"/>
-    </path>
-    <path d="M0,200 L400,250 L800,100 L1200,180" stroke-dasharray="15,15">
-      <animate attributeName="stroke-dashoffset" 
-               from="0" 
-               to="50" 
+               to="-30" 
                dur="6s" 
                repeatCount="indefinite"/>
     </path>
+    <path d="M0,200 L400,250 L800,100 L1200,180" stroke-dasharray="10,20">
+      <animate attributeName="stroke-dashoffset" 
+               from="0" 
+               to="30" 
+               dur="8s" 
+               repeatCount="indefinite"/>
+    </path>
   </g>
+
+  <!-- Adding Particle and Movement Effect for More Depth -->
+  <g filter="url(#particleEffect)">
+    <circle cx="300" cy="150" r="5" fill="#FF6347">
+      <animate attributeName="cx" values="300;400;300" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="150;200;150" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="100" r="6" fill="#F39C12">
+      <animate attributeName="cx" values="700;800;700" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="100;150;100" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
 </svg>
