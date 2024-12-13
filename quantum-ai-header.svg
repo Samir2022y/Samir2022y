@@ -2,38 +2,9 @@
   <defs>
     <!-- Enhanced Gradient -->
     <linearGradient id="enhancedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#282C34" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#8E44AD" stop-opacity="1"/>
+      <stop offset="0%" stop-color="#1D2B64" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#1E7BB3" stop-opacity="1"/>
     </linearGradient>
-
-    <!-- Dynamic Atom with Multiple Orbits -->
-    <symbol id="dynamicAtom" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="20" fill="none" stroke="#00FF00" stroke-width="3"/>
-      <circle cx="50" cy="50" r="30" fill="none" stroke="#F39C12" stroke-width="2" stroke-dasharray="5,5">
-        <animateTransform 
-          attributeName="transform" 
-          type="rotate" 
-          from="0 50 50" 
-          to="360 50 50" 
-          dur="6s" 
-          repeatCount="indefinite"/>
-      </circle>
-      <circle cx="50" cy="50" r="45" fill="none" stroke="#3498DB" stroke-width="1" stroke-dasharray="5,10">
-        <animateTransform 
-          attributeName="transform" 
-          type="rotate" 
-          from="0 50 50" 
-          to="360 50 50" 
-          dur="9s" 
-          repeatCount="indefinite"/>
-      </circle>
-      <circle cx="50" cy="50" r="5" fill="#FF6347">
-        <animateMotion 
-          path="M50,25 Q30,45 50,65 Q70,45 50,25Z" 
-          dur="4s" 
-          repeatCount="indefinite"/>
-      </circle>
-    </symbol>
 
     <!-- Enhanced Glowing Effect -->
     <filter id="glowEffect">
@@ -53,6 +24,21 @@
 
   <!-- Background with Gradient -->
   <rect width="1200" height="300" fill="url(#enhancedGradient)"/>
+
+  <!-- Mathematical Symbols Background -->
+  <g opacity="0.1" fill="rgba(255,255,255,0.5)" font-family="Arial, sans-serif" font-size="40">
+    <!-- Equation Symbols -->
+    <text x="100" y="50">∫ f(x) dx</text>
+    <text x="300" y="80">Σ (x^2 + y^2)</text>
+    <text x="500" y="120">∑ a_n = b</text>
+    <text x="700" y="200">E = mc²</text>
+    <text x="900" y="240">∇⋅E = ρ/ε₀</text>
+
+    <!-- Additional Mathematical Symbols -->
+    <text x="200" y="250">∞</text>
+    <text x="600" y="50">Δx</text>
+    <text x="1000" y="120">∂/∂x</text>
+  </g>
 
   <!-- Molecular Network with Pulsating Lines -->
   <g opacity="0.1" stroke="#A2D9CE" stroke-width="2">
