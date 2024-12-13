@@ -1,117 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
   <defs>
-    <!-- 3D Gradient Effect -->
-    <linearGradient id="3dGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF6F00" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#00B0FF" stop-opacity="1"/>
+    <!-- Gradient for the sky -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#87CEEB" />
+      <stop offset="100%" stop-color="#4682B4" />
     </linearGradient>
-
-    <!-- Glow Effect for 3D Name -->
-    <filter id="glow3DEffect">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
+    
+    <!-- Glow effect for buildings -->
+    <filter id="buildingGlow">
+      <feGaussianBlur stdDeviation="5" result="blur" />
       <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
-
-    <!-- Shadow Effect for 3D Text -->
-    <filter id="shadowEffect">
-      <feDropShadow dx="5" dy="5" stdDeviation="10" flood-color="#000000" />
-    </filter>
-
-    <!-- Lightning Effect for Tesla -->
-    <filter id="lightningEffect">
-      <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" result="turbulence"/>
-      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="20" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-
-    <!-- Particle Effect for Dynamic Movement -->
-    <filter id="particleEffect">
-      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" result="turbulence"/>
-      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    
+    <!-- Animation for clouds -->
+    <filter id="cloudAnimation">
+      <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="3" result="turbulence" />
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="5" />
     </filter>
   </defs>
 
-  <!-- Background with Gradient -->
-  <rect width="1200" height="300" fill="url(#3dGradient)"/>
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#skyGradient)" />
 
-  <!-- Atom Visualization: Simplified to Circles -->
-  <g opacity="0.9" transform="translate(100, 50)">
-    <!-- Inner Electron Orbit -->
-    <circle cx="50" cy="50" r="20" fill="none" stroke="#00FFFF" stroke-width="2" filter="url(#shadowEffect)"/>
-
-    <!-- Outer Electron Orbit 1 -->
-    <circle cx="50" cy="50" r="40" fill="none" stroke="#7B68EE" stroke-width="2" stroke-dasharray="5,5" filter="url(#shadowEffect)">
-      <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="8s" repeatCount="indefinite"/>
-    </circle>
-
-    <!-- Outer Electron Orbit 2 -->
-    <circle cx="50" cy="50" r="60" fill="none" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="3,7" filter="url(#shadowEffect)">
-      <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="10s" repeatCount="indefinite"/>
-    </circle>
-
-    <!-- Electron -->
-    <circle cx="50" cy="50" r="5" fill="#00FFFF">
-      <animateMotion path="M50,30 Q30,50 50,70 Q70,50 50,30Z" dur="6s" repeatCount="indefinite"/>
-    </circle>
+  <!-- Animated Clouds -->
+  <g filter="url(#cloudAnimation)">
+    <ellipse cx="200" cy="80" rx="80" ry="30" fill="#FFFFFF">
+      <animate attributeName="cx" values="-100;300;200" dur="10s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="600" cy="60" rx="90" ry="35" fill="#FFFFFF">
+      <animate attributeName="cx" values="-100;700;600" dur="12s" repeatCount="indefinite"/>
+    </ellipse>
   </g>
 
-  <!-- Title with 3D Effect and Glow (GUENCHI) -->
-  <text x="50%" y="150" 
-        text-anchor="middle" 
-        font-family="Arial, sans-serif" 
-        font-size="100" 
-        font-weight="bold"
-        filter="url(#glow3DEffect)"
-        fill="url(#3dGradient)">
-    <tspan>
-      GUENCHI
-      <animate attributeName="fill-opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
-    </tspan>
-  </text>
-
-  <!-- Subtitle with Animated Letter Spacing -->
-  <text x="50%" y="250" 
-        text-anchor="middle" 
-        font-family="monospace" 
-        font-size="28" 
-        fill="rgba(255,255,255,0.9)">
-    <tspan>
-      QUANTUM COMPUTING | AI RESEARCH | PROGRAMMING INNOVATION
-      <animate attributeName="letter-spacing" values="0px;5px;0px" dur="5s" repeatCount="indefinite"/>
-    </tspan>
-  </text>
-
-  <!-- Lightning Animation for Tesla Inspiration -->
-  <g opacity="0.6" filter="url(#lightningEffect)">
-    <line x1="50" y1="100" x2="250" y2="150" stroke="#FF6347" stroke-width="2">
-      <animate attributeName="x2" from="250" to="450" dur="1s" repeatCount="indefinite"/>
-      <animate attributeName="y2" from="150" to="50" dur="1s" repeatCount="indefinite"/>
-    </line>
-    <line x1="300" y1="200" x2="500" y2="180" stroke="#FF6347" stroke-width="2">
-      <animate attributeName="x2" from="500" to="700" dur="1s" repeatCount="indefinite"/>
-      <animate attributeName="y2" from="180" to="250" dur="1s" repeatCount="indefinite"/>
-    </line>
+  <!-- City Skyline -->
+  <g fill="#2E8B57">
+    <rect x="100" y="200" width="80" height="200" filter="url(#buildingGlow)" />
+    <rect x="220" y="150" width="100" height="250" filter="url(#buildingGlow)" />
+    <rect x="350" y="180" width="120" height="220" filter="url(#buildingGlow)" />
+    <rect x="500" y="100" width="70" height="300" filter="url(#buildingGlow)" />
+    <rect x="600" y="170" width="150" height="230" filter="url(#buildingGlow)" />
+    <rect x="800" y="130" width="90" height="270" filter="url(#buildingGlow)" />
   </g>
 
-  <!-- Einstein Inspired Spiral -->
-  <g opacity="0.6" fill="none" stroke="#F39C12" stroke-width="2">
-    <path d="M400,100 Q450,50 500,100 T600,150 T700,100" stroke-dasharray="5,5">
-      <animate attributeName="stroke-dashoffset" from="0" to="-50" dur="4s" repeatCount="indefinite"/>
+  <!-- Title Text -->
+  <text x="50%" y="350"
+        text-anchor="middle"
+        font-family="'Arial', sans-serif"
+        font-size='48'
+        fill="#FFFFFF">
+    The Future of Innovation
+    <animate attributeName='fill-opacity' values='0.7;1;0.7' dur='3s' repeatCount='indefinite'/>
+  </text>
+
+  <!-- Icons representing technology -->
+  <g fill="#FFD700">
+    <!-- Gear Icon -->
+    <circle cx='300' cy='300' r='20'>
+      <animate attributeName='r' values='20;25;20' dur='2s' repeatCount='indefinite'/>
+    </circle>
+    
+    <!-- Light Bulb Icon -->
+    <circle cx='500' cy='300' r='15'>
+      <animate attributeName='r' values='15;20;15' dur='2s' repeatCount='indefinite'/>
+    </circle>
+    
+    <!-- Wi-Fi Icon -->
+    <path d='M700,300 Q680,280 660,300 Q680,320 700,300 Z' fill='#FFD700'>
+      <animate attributeName='d' values='M700,300 Q680,280 660,300 Q680,320 700,300 Z;
+                                         M700,300 Q680,290 660,310 Q680,330 700,300 Z;
+                                         M700,300 Q680,280 660,300 Q680,320 700,300 Z'
+               dur='3s' repeatCount='indefinite'/>
     </path>
   </g>
-
-  <!-- Particle Movement for Dynamic Energy -->
-  <g>
-    <circle cx="300" cy="150" r="8" fill="#FF6347">
-      <animate attributeName="cx" values="300;400;300" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="150;200;150" dur="4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="700" cy="100" r="8" fill="#F39C12">
-      <animate attributeName="cx" values="700;800;700" dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="100;150;100" dur="6s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-
 </svg>
