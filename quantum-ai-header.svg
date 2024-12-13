@@ -12,27 +12,18 @@
             fill="none" stroke="#00ffff" stroke-width="5" opacity="0.7"/>
     </symbol>
 
-    <!-- Quantum Computing Symbol -->
+    <!-- Quantum Computing Symbol (Qubit) -->
     <symbol id="quantumSymbol" viewBox="0 0 100 100">
       <circle cx="50" cy="50" r="40" fill="none" stroke="#7b68ee" stroke-width="4"/>
       <circle cx="50" cy="50" r="20" fill="#7b68ee" opacity="0.5"/>
       <path d="M20 20 L80 80 M80 20 L20 80" stroke="#00ffff" stroke-width="3" opacity="0.6"/>
     </symbol>
 
-    <!-- Competitive Programming Symbol -->
-    <symbol id="codingSymbol" viewBox="0 0 100 100">
-      <rect x="10" y="10" width="80" height="80" fill="none" stroke="#00ffff" stroke-width="4"/>
-      <path d="M30 40 L50 60 L70 40" fill="none" stroke="#7b68ee" stroke-width="4"/>
-      <path d="M30 60 L50 40 L70 60" fill="none" stroke="#7b68ee" stroke-width="4"/>
-    </symbol>
-
-    <!-- AI Symbol -->
-    <symbol id="aiSymbol" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#00ffff" stroke-width="4"/>
-      <path d="M20 30 Q50 10, 80 30 M20 70 Q50 90, 80 70" 
-            fill="none" stroke="#7b68ee" stroke-width="4"/>
-      <circle cx="35" cy="40" r="5" fill="#00ffff"/>
-      <circle cx="65" cy="40" r="5" fill="#00ffff"/>
+    <!-- Atom Symbol -->
+    <symbol id="atomSymbol" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#ff6347" stroke-width="3"/>
+      <path d="M30 50 Q50 10, 70 50 Q50 90, 30 50" fill="none" stroke="#ff6347" stroke-width="3"/>
+      <path d="M50 30 Q70 50, 50 70 Q30 50, 50 30" fill="none" stroke="#ff6347" stroke-width="3"/>
     </symbol>
 
     <!-- Animated Quantum Particles -->
@@ -42,10 +33,8 @@
     </linearGradient>
   </defs>
 
-  <!-- Background with Moving Gradient -->
-  <rect width="1200" height="300" fill="url(#backgroundGradient)">
-    <animate attributeName="fill" values="url(#backgroundGradient);url(#backgroundGradient);" dur="30s" repeatCount="indefinite"/>
-  </rect>
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#backgroundGradient)"/>
 
   <!-- Quantum Particle Animations -->
   <g opacity="0.7">
@@ -66,42 +55,32 @@
     </circle>
   </g>
 
-  <!-- Symbolic Elements with Color Shifting Animation -->
+  <!-- Symbolic Elements -->
   <g transform="translate(100, 50)">
-    <use href="#integralSymbol" width="80" height="80" opacity="0.6">
-      <animate attributeName="stroke" values="#00ffff;#ff6347;#7b68ee;#00ffff" dur="5s" repeatCount="indefinite"/>
-    </use>
+    <use href="#integralSymbol" width="80" height="80" opacity="0.8"/>
   </g>
   <g transform="translate(300, 50)">
-    <use href="#quantumSymbol" width="80" height="80" opacity="0.6">
-      <animate attributeName="stroke" values="#7b68ee;#ff6347;#00ffff;#7b68ee" dur="5s" repeatCount="indefinite"/>
-    </use>
+    <use href="#quantumSymbol" width="80" height="80" opacity="0.8"/>
   </g>
   <g transform="translate(500, 50)">
-    <use href="#codingSymbol" width="80" height="80" opacity="0.6">
-      <animate attributeName="stroke" values="#00ffff;#ff6347;#7b68ee;#00ffff" dur="5s" repeatCount="indefinite"/>
-    </use>
+    <use href="#atomSymbol" width="80" height="80" opacity="0.8"/>
   </g>
+
+  <!-- Qubit Circuits -->
   <g transform="translate(700, 50)">
-    <use href="#aiSymbol" width="80" height="80" opacity="0.6">
-      <animate attributeName="stroke" values="#00ffff;#ff6347;#7b68ee;#00ffff" dur="5s" repeatCount="indefinite"/>
-    </use>
+    <circle cx="50" cy="50" r="40" fill="none" stroke="#00ffff" stroke-width="4"/>
+    <path d="M30 50 L70 50" stroke="#7b68ee" stroke-width="4"/>
+    <path d="M50 30 L50 70" stroke="#7b68ee" stroke-width="4"/>
   </g>
 
-  <!-- Quantum Circuit-like Lines -->
-  <g stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none">
-    <path d="M0,100 L400,50 L800,200 L1200,150" stroke-dasharray="10,10"/>
-    <path d="M0,200 L400,250 L800,100 L1200,180" stroke-dasharray="15,15"/>
-  </g>
-
-  <!-- Text Overlay with Responsive Layout -->
+  <!-- Text Overlay -->
   <text x="50%" y="220" 
         text-anchor="middle" 
         font-family="monospace" 
         font-size="36" 
         font-weight="bold" 
         fill="white">
-    <tspan x="50%" dy="-100" font-size="48" fill="#00ffff">Samir Guenchi</tspan>
+    <tspan x="50%" dy="-100" font-size="48" fill="#00ffff">Guenchi Samir</tspan>
     <tspan x="50%" dy="50" font-size="24" fill="rgba(255,255,255,0.8)">
       Quantum Computing | AI Research | Competitive Programming
     </tspan>
@@ -109,4 +88,10 @@
       Exploring the Intersection of Mathematics, Technology, and Innovation
     </tspan>
   </text>
+
+  <!-- Quantum Circuit-like Lines -->
+  <g stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none">
+    <path d="M0,100 L400,50 L800,200 L1200,150" stroke-dasharray="10,10"/>
+    <path d="M0,200 L400,250 L800,100 L1200,180" stroke-dasharray="15,15"/>
+  </g>
 </svg>
